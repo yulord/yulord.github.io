@@ -7681,6 +7681,13 @@ textarea.form-control-lg {
   text-align: center !important;
 }
 
+.about-paragraph {
+
+  width: 550px;
+  text-align: left;
+  margin: auto;
+}
+
 .text-decoration-none {
   text-decoration: none !important;
 }
