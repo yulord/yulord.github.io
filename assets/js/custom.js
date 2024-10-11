@@ -144,5 +144,62 @@ $(document).ready(function(){
 		// Adjust the background position based on scroll position for a parallax effect.
 		heroSection.style.backgroundPositionY = -(scrollPosition * 0.5) + 'px';
     });
+
+	//7. extra
 });	
+
+document.addEventListener("DOMContentLoaded", function() {
+    const aboutImages = document.querySelectorAll(".about-image");
+
+    function isInViewport(element) {
+        const rect = element.getBoundingClientRect();
+        return (
+            rect.top >= 0 &&
+            rect.bottom <= (window.innerHeight || document.documentElement.clientHeight)
+        );
+    }
+
+    function checkImagesInView() {
+        aboutImages.forEach(image => {
+            if (isInViewport(image)) {
+                image.classList.add("show");
+            } else {
+                image.classList.remove("show");
+            }
+        });
+    }
+
+    window.addEventListener("scroll", checkImagesInView);
+    checkImagesInView(); // Initial check in case images are already in view
+});
+
+document.addEventListener("DOMContentLoaded", function() {
+    const aboutParagraph = document.querySelector(".single-about-txt p");
+	const downArrows = document.querySelector(".down-arrows");
+	const aboutHeader = document.querySelector(".single-about-txt h3");
+    const originalText = aboutParagraph.textContent;
+	const originalHeader = aboutHeader.textContent;
+
+    function handleScroll() {
+        const scrollTop = window.scrollY;
+        const windowHeight = window.innerHeight;
+        const documentHeight = document.body.scrollHeight;
+
+        if (scrollTop + windowHeight >= documentHeight - 1) {
+            // At the very bottom of the page
+            aboutParagraph.classList.add("hidden");
+            downArrows.classList.remove("hidden");
+            downArrows.classList.add("visible");
+			aboutHeader.textContent = ""
+        } else {
+            // Not at the bottom, revert back to original text
+            aboutParagraph.classList.remove("hidden");
+            downArrows.classList.add("hidden");
+            downArrows.classList.remove("visible");
+			aboutHeader.textContent = originalHeader
+        }
+    }
+
+    window.addEventListener("scroll", handleScroll);
+});
 	

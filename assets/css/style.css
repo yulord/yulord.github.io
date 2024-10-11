@@ -76,7 +76,7 @@ html,body{
 }
 
 footer{
-    margin-top: 23rem;
+    margin-top: 9rem;
 }
 
 .fix{position: relative;clear: both;}
@@ -186,8 +186,9 @@ nav.navbar.bootsnav .navbar-toggle i{color: #ffa136;}
     background:url(../images/timesquare.jpg)no-repeat;
     background-size:cover;
     background-position: center;
-    height: 953px;
-    background-attachment: fixed; 
+    height: 132rem;
+    background-attachment: fixed;
+    max-height: 109rem;
 }
 .welcome-hero:before{
     position:absolute;
@@ -199,6 +200,17 @@ nav.navbar.bootsnav .navbar-toggle i{color: #ffa136;}
     height:100%;
 }
 
+@media (width < 1750px) {
+    .welcome-hero{
+        max-height: 92rem;
+    }
+}
+
+@media (width > 2151px) {
+    .welcome-hero{
+        max-height: 132rem;
+    }
+}
 /*.header-text-area*/
 
 .header-text img {
@@ -243,7 +255,28 @@ nav.navbar.bootsnav .navbar-toggle i{color: #ffa136;}
 /*-------------------------------------
         4.  About
 --------------------------------------*/
-.about {padding: 50px 0 100px;}
+
+.about-image {
+    opacity: 0;
+    transform: translateX(100px);
+    transition: opacity 1s ease, transform 1s ease;
+    will-change: opacity, transform;
+}
+
+.fade-in-left {
+    transform: translateX(-100px);
+}
+
+.fade-in-right {
+    transform: translateX(100px);
+}
+
+.show {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+.about {padding: 116px 0 246px;}
 .about-content {padding-top: 100px;}
 /*.single-about-txt*/
 .single-about-txt h3 {
@@ -251,12 +284,13 @@ nav.navbar.bootsnav .navbar-toggle i{color: #ffa136;}
     color: #3c4258;
     text-transform: initial;
     line-height: 1.8;
+    text-align: center;
 }
 .single-about-txt p {
     font-size: 16px;
     color: #999fb3;
     padding: 35px 0 43px;
-    border-bottom: 1px solid #999fb3;
+    text-align: center;
 }
 .single-about-add-info {
     margin: 35px 0;
@@ -486,4 +520,63 @@ nav.navbar.bootsnav .navbar-toggle i{color: #ffa136;}
 @keyframes example {
     0%   {bottom:0px;}
     100%  {bottom:7px;}
+}
+
+.down-arrows {
+    display: inline-flex;
+    align-items: center;
+    gap: 27px; /* Space between the arrow and the text */
+    opacity: 0;
+    transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
+.down-arrows.hidden {
+    opacity: 0;
+    transform: translateY(10px); /* Fade-out and slide-down for smooth animation */
+}
+
+.down-arrows.visible {
+    opacity: 1;
+    text-align: center;
+    transform: translateY(0);
+}
+
+.down-arrows .arrow {
+    display: inline-block;
+    font-size: 24px;
+    color: orange;
+    animation: bounce 1s infinite alternate;
+}
+
+@keyframes bounce {
+    0% {
+        transform: translateY(0);
+    }
+    100% {
+        transform: translateY(10px);
+    }
+}
+
+.social-link {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px; /* Adjust this value for the space between the icon and text */
+}
+
+.social-link a {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    color: inherit; /* Ensure the text color matches your theme */
+}
+
+.social-link i {
+    font-size: 18px;
+    margin-right: 8px; /* Adjust the icon size if needed */
+}
+
+.social-link p {
+    margin: 0;
+    font-size: 14px; /* Adjust the font size if needed */
 }
