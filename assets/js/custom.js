@@ -123,16 +123,26 @@ $(document).ready(function(){
             $(".header-text a").addClass("animated fadeInDown").css({'opacity':'0'});
         });
 
-	// // 6. parallax
-	// 	$(window).scroll(function(e){
-	// 		parallax();
-	// 	});
-	// 	function parallax(){
-	// 		console.log('test')
-	// 		var scrolled = $(window).scrollTop();
-	// 		$('.welcome-hero').css('top',-(scrolled*0.0315)+'rem');
-	// 		$('.welcome-hero > .header-text').css('top',-(scrolled*-0.005)+'rem');
-	// 		$('.welcome-hero > .header-text').css('opacity',1-(scrolled*.00175));
-	// 	};
+	// 6. parallax
+
+
+    window.addEventListener('scroll', function() {
+        const scrollPosition = window.scrollY;
+        const headerImage = document.querySelector('.header-text img');
+        const heroSection = document.querySelector('.welcome-hero');
+        
+        // Calculate the new opacity and translateY based on the scroll position.
+        // The more you scroll, the lower the opacity and the more it moves down.
+        const maxScroll = 500; // Adjust this value as needed for when the image should be fully faded out.
+        const opacity = Math.max(0, 1 - scrollPosition / maxScroll);
+        const translateY = Math.min(50, scrollPosition / 15); // Adjust this value for more or less movement.
+
+        // Apply the styles to the image.
+        headerImage.style.opacity = opacity;
+        headerImage.style.transform = `translateY(${translateY}px)`;
+
+		// Adjust the background position based on scroll position for a parallax effect.
+		heroSection.style.backgroundPositionY = -(scrollPosition * 0.5) + 'px';
+    });
 });	
 	

@@ -90,6 +90,13 @@ footer{
     z-index: 9999;
 }
 @media (min-width: 1024px){}
+
+@media (max-width: 992px) {
+    nav.navbar.bootsnav.no-full .navbar-collapse {
+        max-height: 350px;
+        overflow-y: hidden !important;
+    }
+}
 nav.navbar.bootsnav.no-background {
     background-color: #23232399;
     border: none;
@@ -99,6 +106,7 @@ nav.navbar.bootsnav {
     background-color: #fff;
     border-bottom: transparent;
     box-shadow: 0 3px 15px rgba(0,0,0,.2);
+    transition: background-color 1s ease, color 1s ease;
 }
 
 /*.navbar-brand*/
@@ -141,7 +149,7 @@ nav.navbar.bootsnav ul.nav > li.dropdown span {
 
 
 /*.menu-ui-design*/
-.menu-ui-design{overflow-y:scroll;height: 350px;}
+.menu-ui-design{overflow-y:hidden!important;height: 53px;}
 .menu-ui-design::-webkit-scrollbar {
     width:5px;
 }
@@ -159,7 +167,6 @@ nav.navbar.bootsnav ul.nav > li.dropdown span {
 nav.navbar.bootsnav .navbar-toggle {
     position: relative;
     background-color: transparent;
-    border: 1px solid #ffa136;
     padding: 10px;
     top: 0;
 }
@@ -180,6 +187,7 @@ nav.navbar.bootsnav .navbar-toggle i{color: #ffa136;}
     background-size:cover;
     background-position: center;
     height: 1360px;
+    background-attachment: fixed; 
 }
 .welcome-hero:before{
     position:absolute;
@@ -192,6 +200,11 @@ nav.navbar.bootsnav .navbar-toggle i{color: #ffa136;}
 }
 
 /*.header-text-area*/
+
+.header-text img {
+    transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
 .header-text h2 {
     color: #fff;
     font-size: 54px;
