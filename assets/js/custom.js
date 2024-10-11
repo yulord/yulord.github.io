@@ -150,6 +150,7 @@ $(document).ready(function(){
 
 document.addEventListener("DOMContentLoaded", function() {
     const aboutImages = document.querySelectorAll(".about-image");
+    let ticking = false;
 
     function isInViewport(element) {
         const rect = element.getBoundingClientRect();
@@ -167,9 +168,17 @@ document.addEventListener("DOMContentLoaded", function() {
                 image.classList.remove("show");
             }
         });
+        ticking = false;
     }
 
-    window.addEventListener("scroll", checkImagesInView);
+    function onScroll() {
+        if (!ticking) {
+            window.requestAnimationFrame(checkImagesInView);
+            ticking = true;
+        }
+    }
+
+    window.addEventListener("scroll", onScroll);
     checkImagesInView(); // Initial check in case images are already in view
 });
 
