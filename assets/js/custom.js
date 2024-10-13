@@ -124,20 +124,18 @@ $(document).ready(function(){
     // 5. welcome animation support
 
         $(window).load(function(){
-        	$(".header-text h2,.header-text p").removeClass("animated fadeInUp").css({'opacity':'0'});
-            $(".header-text a").removeClass("animated fadeInDown").css({'opacity':'0'});
+        	$(".header-text").removeClass("animated fadeInUp").css({'opacity':'0'});
         });
 
         $(window).load(function(){
-        	$(".header-text h2,.header-text p").addClass("animated fadeInUp").css({'opacity':'0'});
-            $(".header-text a").addClass("animated fadeInDown").css({'opacity':'0'});
+        	$(".header-text").addClass("animated fadeInUp").css({'opacity':'0'});
         });
 
 	// 6. parallax
 
 
     window.addEventListener('scroll', function() {
-		if ($(window).width() > 1000) {
+		// if ($(window).width() > 1000) {
         const scrollPosition = window.scrollY;
         const headerImage = document.querySelector('.header-text img');
         const heroSection = document.querySelector('.welcome-hero');
@@ -153,8 +151,8 @@ $(document).ready(function(){
         headerImage.style.transform = `translateY(${translateY}px)`;
 
 		// Adjust the background position based on scroll position for a parallax effect.
-		heroSection.style.backgroundPositionY = -(scrollPosition * 0.5) + 'px';
-		}
+		headerImage.style.backgroundPositionY = -(scrollPosition * 0.5) + 'px';
+		// }
     });
 
 	//7. extra

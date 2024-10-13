@@ -196,7 +196,7 @@ nav.navbar.bootsnav .navbar-toggle i{color: #ffa136;}
     background-size:cover;
     background-position: center;
     min-height: 100vh;
-    background-attachment: fixed;
+    background-attachment: scroll;
 }
 .welcome-hero:before{
     position:absolute;
