@@ -79,6 +79,10 @@ footer{
     margin-top: 9rem;
 }
 
+.wrapper{
+    overflow-x: hidden;
+}
+
 .fix{position: relative;clear: both;}
 /*=============Style css=========*/
 

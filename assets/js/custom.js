@@ -67,58 +67,58 @@ $(document).ready(function(){
 
 	// 3. Progress-bar
 	
-		var dataToggleTooTip = $('[data-toggle="tooltip"]');
-		var progressBar = $(".progress-bar");
-		if (progressBar.length) {
-			progressBar.appear(function () {
-				dataToggleTooTip.tooltip({
-					trigger: 'manual'
-				}).tooltip('show');
-				progressBar.each(function () {
-					var each_bar_width = $(this).attr('aria-valuenow');
-					$(this).width(each_bar_width + '%');
-				});
-			});
-		}
+		// var dataToggleTooTip = $('[data-toggle="tooltip"]');
+		// var progressBar = $(".progress-bar");
+		// if (progressBar.length) {
+		// 	progressBar.appear(function () {
+		// 		dataToggleTooTip.tooltip({
+		// 			trigger: 'manual'
+		// 		}).tooltip('show');
+		// 		progressBar.each(function () {
+		// 			var each_bar_width = $(this).attr('aria-valuenow');
+		// 			$(this).width(each_bar_width + '%');
+		// 		});
+		// 	});
+		// }
 	
 	// 4. owl carousel
 	
 		// i. client (carousel)
 		
-			$('#client').owlCarousel({
-				items:7,
-				loop:true,
-				smartSpeed: 1000,
-				autoplay:true,
-				dots:false,
-				autoplayHoverPause:true,
-				responsive:{
-						0:{
-							items:2
-						},
-						415:{
-							items:2
-						},
-						600:{
-							items:4
+			// $('#client').owlCarousel({
+			// 	items:7,
+			// 	loop:true,
+			// 	smartSpeed: 1000,
+			// 	autoplay:true,
+			// 	dots:false,
+			// 	autoplayHoverPause:true,
+			// 	responsive:{
+			// 			0:{
+			// 				items:2
+			// 			},
+			// 			415:{
+			// 				items:2
+			// 			},
+			// 			600:{
+			// 				items:4
 
-						},
-						1199:{
-							items:4
-						},
-						1200:{
-							items:7
-						}
-					}
-				});
+			// 			},
+			// 			1199:{
+			// 				items:4
+			// 			},
+			// 			1200:{
+			// 				items:7
+			// 			}
+			// 		}
+			// 	});
 				
 				
-				$('.play').on('click',function(){
-					owl.trigger('play.owl.autoplay',[1000])
-				})
-				$('.stop').on('click',function(){
-					owl.trigger('stop.owl.autoplay')
-				})
+			// 	$('.play').on('click',function(){
+			// 		owl.trigger('play.owl.autoplay',[1000])
+			// 	})
+			// 	$('.stop').on('click',function(){
+			// 		owl.trigger('stop.owl.autoplay')
+			// 	})
 
 
     // 5. welcome animation support
