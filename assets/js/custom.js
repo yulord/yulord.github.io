@@ -36,13 +36,23 @@ $(document).ready(function(){
 	
 	// 2. Smooth Scroll spy
 		
-		$('.header-area').sticky({
-           topSpacing:0
-        });
+		if ($(window).width() > 992) {
+			$('.header-area').sticky({
+				topSpacing: 0
+			});
+		}
 		
 		//=============
 
 		$('li.smooth-menu a').bind("click", function(event) {
+			event.preventDefault();
+			var anchor = $(this);
+			$('html, body').stop().animate({
+				scrollTop: $(anchor.attr('href')).offset().top - 0
+			}, 1200,'easeInOutExpo');
+		});
+
+		$('.navbar-brand').bind("click", function(event) {
 			event.preventDefault();
 			var anchor = $(this);
 			$('html, body').stop().animate({
@@ -127,6 +137,7 @@ $(document).ready(function(){
 
 
     window.addEventListener('scroll', function() {
+		if ($(window).width() > 1000) {
         const scrollPosition = window.scrollY;
         const headerImage = document.querySelector('.header-text img');
         const heroSection = document.querySelector('.welcome-hero');
@@ -143,13 +154,15 @@ $(document).ready(function(){
 
 		// Adjust the background position based on scroll position for a parallax effect.
 		heroSection.style.backgroundPositionY = -(scrollPosition * 0.5) + 'px';
+		}
     });
 
 	//7. extra
 });	
 
 document.addEventListener("DOMContentLoaded", function() {
-    const aboutImages = document.querySelectorAll(".about-image");
+    const about1Content = document.querySelector("#about .about-content");
+    const about2Content = document.querySelector("#about-2 .about-content");
     let ticking = false;
 
     function isInViewport(element) {
@@ -160,26 +173,33 @@ document.addEventListener("DOMContentLoaded", function() {
         );
     }
 
-    function checkImagesInView() {
-        aboutImages.forEach(image => {
-            if (isInViewport(image)) {
-                image.classList.add("show");
-            } else {
-                image.classList.remove("show");
-            }
-        });
+    function checkContentInView() {
+        // Check for first "About" section
+        if (isInViewport(about1Content)) {
+            about1Content.classList.add("fade-in-left", "show");
+        } else {
+            about1Content.classList.remove("show");
+        }
+
+        // Check for second "About" section
+        if (isInViewport(about2Content)) {
+            about2Content.classList.add("fade-in-right", "show");
+        } else {
+            about2Content.classList.remove("show");
+        }
+
         ticking = false;
     }
 
     function onScroll() {
         if (!ticking) {
-            window.requestAnimationFrame(checkImagesInView);
+            window.requestAnimationFrame(checkContentInView);
             ticking = true;
         }
     }
 
     window.addEventListener("scroll", onScroll);
-    checkImagesInView(); // Initial check in case images are already in view
+    checkContentInView(); // Initial check in case sections are already in view
 });
 
 document.addEventListener("DOMContentLoaded", function() {
@@ -211,4 +231,3 @@ document.addEventListener("DOMContentLoaded", function() {
 
     window.addEventListener("scroll", handleScroll);
 });
-	

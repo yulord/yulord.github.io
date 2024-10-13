@@ -92,11 +92,19 @@ footer{
 @media (min-width: 1024px){}
 
 @media (max-width: 992px) {
-    nav.navbar.bootsnav.no-full .navbar-collapse {
-        max-height: 350px;
-        overflow-y: hidden !important;
+    /* Hide the navbar toggle button on mobile */
+    .navbar-toggle {
+        display: none; /* Hides the menu button */
+    }
+
+    /* Ensure the navbar is visible even without the toggle button */
+    nav.navbar.bootsnav {
+        position: relative; /* Keeps navbar visible */
+        background-color: #232323; /* Adds a background to the navbar */
+        width: 100%;
     }
 }
+
 nav.navbar.bootsnav.no-background {
     background-color: #23232399;
     border: none;
@@ -169,6 +177,7 @@ nav.navbar.bootsnav .navbar-toggle {
     background-color: transparent;
     padding: 10px;
     top: 0;
+    z-index: 10000;
 }
 nav.navbar.bootsnav .navbar-toggle i{color: #ffa136;}
 /*.navbar-toggle */
@@ -186,9 +195,8 @@ nav.navbar.bootsnav .navbar-toggle i{color: #ffa136;}
     background:url(../images/timesquare.jpg)no-repeat;
     background-size:cover;
     background-position: center;
-    height: 132rem;
+    min-height: 100vh;
     background-attachment: fixed;
-    max-height: 109rem;
 }
 .welcome-hero:before{
     position:absolute;
@@ -200,15 +208,10 @@ nav.navbar.bootsnav .navbar-toggle i{color: #ffa136;}
     height:100%;
 }
 
-@media (width < 1750px) {
-    .welcome-hero{
-        max-height: 92rem;
-    }
-}
-
-@media (width > 2151px) {
-    .welcome-hero{
-        max-height: 132rem;
+@media (max-width: 1000px) {
+    .welcome-hero {
+        background-attachment: scroll;
+        background-position: center top; /* Adjust background position for mobile */
     }
 }
 /*.header-text-area*/
@@ -264,11 +267,17 @@ nav.navbar.bootsnav .navbar-toggle i{color: #ffa136;}
 }
 
 .fade-in-left {
+    opacity: 0;
     transform: translateX(-100px);
+    transition: opacity 1s ease, transform 1s ease;
+    will-change: opacity, transform;
 }
 
 .fade-in-right {
+    opacity: 0;
     transform: translateX(100px);
+    transition: opacity 1s ease, transform 1s ease;
+    will-change: opacity, transform;
 }
 
 .show {
@@ -276,8 +285,88 @@ nav.navbar.bootsnav .navbar-toggle i{color: #ffa136;}
     transform: translateX(0);
 }
 
-.about {padding: 116px 0 246px;}
-.about-content {padding-top: 100px;}
+/* About section 1 */
+.about {
+    padding: 116px 0 298px;
+    background: url(../images/japan.jpg) no-repeat center center;
+    background-size: cover;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh; /* Ensures full-height display */
+}
+
+.about:before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(31, 44, 108, 0.5); /* Overlay filter */
+    z-index: 1;
+}
+
+/* About section 2 */
+.about-2 {
+    padding: 116px 0 298px;
+    background: url(../images/subway.jpg) no-repeat center center;
+    background-size: cover;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh; /* Ensures full-height display */
+}
+
+.about-2:before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(31, 44, 108, 0.5); /* Overlay filter for the second section */
+    z-index: 1;
+}
+
+.about-content {
+    z-index: 2;
+    text-align: center;
+    color: #fff; /* Make text white */
+    max-width: 800px; /* Limit the width for better readability */
+    margin: 0 auto;
+}
+
+.about-content h3 {
+    font-size: 28px;
+    color: #fff; /* Header color */
+    text-transform: none;
+}
+
+.about-content p {
+    font-size: 18px;
+    color: #fff; /* Paragraph color */
+    line-height: 1.8;
+    margin-top: 20px;
+}
+
+/* Mobile responsiveness */
+@media (max-width: 768px) {
+    .about {
+        padding: 80px 0;
+        background-position: center top; /* Adjust background for smaller screens */
+    }
+
+    .about-content h3 {
+        font-size: 22px;
+    }
+
+    .about-content p {
+        font-size: 16px;
+    }
+}
 /*.single-about-txt*/
 .single-about-txt h3 {
     font-size:18px;
