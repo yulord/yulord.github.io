@@ -290,7 +290,6 @@ nav.navbar.bootsnav .navbar-toggle i{color: #ffa136;}
 
 /* About section 1 */
 .about {
-    padding: 116px 0 298px;
     background: url(../images/japan.jpg) no-repeat center center;
     background-size: cover;
     position: relative;
@@ -313,7 +312,6 @@ nav.navbar.bootsnav .navbar-toggle i{color: #ffa136;}
 
 /* About section 2 */
 .about-2 {
-    padding: 116px 0 298px;
     background: url(../images/subway.jpg) no-repeat center center;
     background-size: cover;
     position: relative;
@@ -336,7 +334,6 @@ nav.navbar.bootsnav .navbar-toggle i{color: #ffa136;}
 
 /* About section 2 */
 .about-3 {
-    padding: 116px 0 298px;
     background: url(../images/\ billboard.png) no-repeat center center;
     background-size: cover;
     position: relative;
