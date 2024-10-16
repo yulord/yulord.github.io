@@ -161,6 +161,7 @@ $(document).ready(function(){
 document.addEventListener("DOMContentLoaded", function() {
     const about1Content = document.querySelector("#about .about-content");
     const about2Content = document.querySelector("#about-2 .about-content");
+	const about3Content = document.querySelector("#about-3 .about-content");
     let ticking = false;
 
     function isInViewport(element) {
@@ -184,6 +185,13 @@ document.addEventListener("DOMContentLoaded", function() {
             about2Content.classList.add("fade-in-right", "show");
         } else {
             about2Content.classList.remove("show");
+        }
+
+		// Check for second "About" section
+        if (isInViewport(about3Content)) {
+            about3Content.classList.add("fade-in-left", "show");
+        } else {
+            about3Content.classList.remove("show");
         }
 
         ticking = false;
