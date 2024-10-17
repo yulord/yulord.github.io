@@ -488,7 +488,7 @@ nav.navbar.bootsnav .navbar-toggle i{color: #ffa136;}
 }
 
 .single-contact-btn {
-    z-index: 9999;  /* A very high value to ensure it's on top */
+    z-index: 2;  /* A very high value to ensure it's on top */
     position: relative;
 }
 
