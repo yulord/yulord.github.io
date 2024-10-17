@@ -76,7 +76,7 @@ html,body{
 }
 
 footer{
-    margin-top: 9rem;
+    margin-top: 10rem;
 }
 
 .wrapper{
@@ -473,7 +473,25 @@ nav.navbar.bootsnav .navbar-toggle i{color: #ffa136;}
     background: #f9fbfd;
     padding: 14px 0 14px;
 }
-.single-contact-box {padding-top: 100px;}
+.single-contact-box {
+    padding-top: 70px;
+    border-top: 1px solid #e5ebf2;
+    padding-inline: 12vw;
+    margin-bottom: 3%;
+}
+
+.single-contact-box h2 {
+    text-align: center;
+    padding-bottom: 57px;
+    color: #757575;
+    font-size: 18px;
+}
+
+.single-contact-btn {
+    z-index: 9999;  /* A very high value to ensure it's on top */
+    position: relative;
+}
+
 .contact-form  .form-group {
     margin-bottom: 20px;
     
@@ -498,8 +516,8 @@ nav.navbar.bootsnav .navbar-toggle i{color: #ffa136;}
     height:50px;
     text-transform:capitalize;
     margin-top: 3px;
-    background: #ffa136;
-    border: 1px solid #ffa136;
+    background: #ffb561;
+    border: 1px solid #ffb561;
     cursor:pointer;
     box-shadow: 0 5px 20px rgba(0,0,0,.2);
      -webkit-transition: .5s; 
@@ -527,6 +545,11 @@ nav.navbar.bootsnav .navbar-toggle i{color: #ffa136;}
     background: #ffa136;
     border: 1px solid #ffa136;
     box-shadow: 0 5px 20px rgba(0,0,0,.2);
+}
+
+.contact-btn{
+    width: 100%;
+    height: 100%;
 }
 
 /*--contct button--*/

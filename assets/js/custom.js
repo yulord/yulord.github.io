@@ -208,32 +208,32 @@ document.addEventListener("DOMContentLoaded", function() {
     checkContentInView(); // Initial check in case sections are already in view
 });
 
-document.addEventListener("DOMContentLoaded", function() {
-    const aboutParagraph = document.querySelector(".single-about-txt p");
-	const downArrows = document.querySelector(".down-arrows");
-	const aboutHeader = document.querySelector(".single-about-txt h3");
-    const originalText = aboutParagraph.textContent;
-	const originalHeader = aboutHeader.textContent;
+// document.addEventListener("DOMContentLoaded", function() {
+//     const aboutParagraph = document.querySelector(".about-content p");
+// 	const downArrows = document.querySelector(".down-arrows");
+// 	const aboutHeader = document.querySelector(".about-content h3");
+//     const originalText = aboutParagraph.textContent;
+// 	const originalHeader = aboutHeader.textContent;
 
-    function handleScroll() {
-        const scrollTop = window.scrollY;
-        const windowHeight = window.innerHeight;
-        const documentHeight = document.body.scrollHeight;
+//     function handleScroll() {
+//         const scrollTop = window.scrollY;
+//         const windowHeight = window.innerHeight;
+//         const documentHeight = document.body.scrollHeight;
 
-        if (scrollTop + windowHeight >= documentHeight - 1) {
-            // At the very bottom of the page
-            aboutParagraph.classList.add("hidden");
-            downArrows.classList.remove("hidden");
-            downArrows.classList.add("visible");
-			aboutHeader.textContent = ""
-        } else {
-            // Not at the bottom, revert back to original text
-            aboutParagraph.classList.remove("hidden");
-            downArrows.classList.add("hidden");
-            downArrows.classList.remove("visible");
-			aboutHeader.textContent = originalHeader
-        }
-    }
+//         if (scrollTop + windowHeight >= documentHeight - 1) {
+//             // At the very bottom of the page
+//             aboutParagraph.classList.add("hidden");
+//             downArrows.classList.remove("hidden");
+//             downArrows.classList.add("visible");
+// 			aboutHeader.textContent = ""
+//         } else {
+//             // Not at the bottom, revert back to original text
+//             aboutParagraph.classList.remove("hidden");
+//             downArrows.classList.add("hidden");
+//             downArrows.classList.remove("visible");
+// 			aboutHeader.textContent = originalHeader
+//         }
+//     }
 
-    window.addEventListener("scroll", handleScroll);
-});
+//     window.addEventListener("scroll", handleScroll);
+// });
