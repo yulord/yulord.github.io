@@ -474,10 +474,10 @@ nav.navbar.bootsnav .navbar-toggle i{color: #ffa136;}
     padding: 14px 0 14px;
 }
 .single-contact-box {
-    padding-top: 70px;
-    border-top: 1px solid #e5ebf2;
+    padding-top: 73px;
+    border-bottom: 1px solid #e5ebf2;
     padding-inline: 12vw;
-    margin-bottom: 3%;
+    padding-bottom: 5vh;
 }
 
 .single-contact-box h2 {
