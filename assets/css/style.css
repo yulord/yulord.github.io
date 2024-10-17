@@ -1,12 +1,5 @@
 
-/*==================================
-font-family: 'Poppins', sans-serif;
-==================================== */
 
-
-/*-------------------------------------
-		1.General css (Reset code)
---------------------------------------*/
 *{
     padding: 0;
     margin: 0;
@@ -84,11 +77,7 @@ footer{
 }
 
 .fix{position: relative;clear: both;}
-/*=============Style css=========*/
 
-/*-------------------------------------
-        2. Header
---------------------------------------*/
 .top-area {
     position: relative;
     z-index: 9999;
@@ -96,15 +85,14 @@ footer{
 @media (min-width: 1024px){}
 
 @media (max-width: 992px) {
-    /* Hide the navbar toggle button on mobile */
+
     .navbar-toggle {
-        display: none; /* Hides the menu button */
+        display: none; 
     }
 
-    /* Ensure the navbar is visible even without the toggle button */
     nav.navbar.bootsnav {
-        position: relative; /* Keeps navbar visible */
-        background-color: #232323; /* Adds a background to the navbar */
+        position: relative; 
+        background-color: #232323; 
         width: 100%;
     }
 }
@@ -121,7 +109,7 @@ nav.navbar.bootsnav {
     transition: background-color 1s ease, color 1s ease;
 }
 
-/*.navbar-brand*/
+
 .navbar-header a.navbar-brand,.navbar-header a.navbar-brand:hover,.navbar-header a.navbar-brand:focus {
     display: inline-block;
     color: #ffa136;
@@ -130,9 +118,15 @@ nav.navbar.bootsnav {
     padding: 14px 0px 57px;
     text-transform: uppercase;
 }
-/*.navbar-brand*/
 
-/*.nav li*/
+.nav-header-text{
+    color: #ffa136;
+    font-size: 20px;
+    font-weight: 600;
+    text-transform: uppercase;
+}
+
+
 nav.navbar.bootsnav ul.nav > li > a {
     color: #b6b6b6;
     font-size: 16px;
@@ -155,11 +149,7 @@ nav.navbar.bootsnav ul.nav > li.dropdown span {
     margin-left: 15px;
 }
 .sticky-wrapper.is-sticky nav.navbar.bootsnav ul.nav > li > a:hover,.sticky-wrapper.is-sticky nav.navbar.bootsnav ul.nav > li > a:focus,.sticky-wrapper.is-sticky nav.navbar.bootsnav ul.nav > li.active>a{color: #ffa136;}
-/*.nav li*/
 
-
-
-/*.menu-ui-design*/
 .menu-ui-design{overflow-y:hidden!important;height: 53px;}
 .menu-ui-design::-webkit-scrollbar {
     width:5px;
@@ -170,11 +160,7 @@ nav.navbar.bootsnav ul.nav > li.dropdown span {
 .menu-ui-design::-webkit-scrollbar-thumb {
   background-color: #ffa136;
 }
-/*.menu-ui-design*/
 
-
-
-/*.navbar-toggle */
 nav.navbar.bootsnav .navbar-toggle {
     position: relative;
     background-color: transparent;
@@ -183,13 +169,7 @@ nav.navbar.bootsnav .navbar-toggle {
     z-index: 10000;
 }
 nav.navbar.bootsnav .navbar-toggle i{color: #ffa136;}
-/*.navbar-toggle */
 
-
-
-/*-------------------------------------
-        3.  Welcome-hero
---------------------------------------*/
 .welcome-hero{
     display: flex;
     align-items: center;
@@ -214,10 +194,9 @@ nav.navbar.bootsnav .navbar-toggle i{color: #ffa136;}
 @media (max-width: 1000px) {
     .welcome-hero {
         background-attachment: scroll;
-        background-position: center top; /* Adjust background position for mobile */
+        background-position: center top; 
     }
 }
-/*.header-text-area*/
 
 .header-text img {
     transition: opacity 0.5s ease, transform 0.5s ease;
@@ -256,11 +235,6 @@ nav.navbar.bootsnav .navbar-toggle i{color: #ffa136;}
     transition: 0.3s linear;
 }
 .header-text a:hover{ box-shadow: 0 5px 20px rgba(0,0,0,.4);background:hsl(32, 100%, 71%);border: 1px solid #ffa136;}
-/*.header-text-area*/
-
-/*-------------------------------------
-        4.  About
---------------------------------------*/
 
 .about-image {
     opacity: 0;
@@ -288,7 +262,7 @@ nav.navbar.bootsnav .navbar-toggle i{color: #ffa136;}
     transform: translateX(0);
 }
 
-/* About section 1 */
+
 .about {
     background: url(../images/japan.jpg) no-repeat center center;
     background-size: cover;
@@ -296,7 +270,7 @@ nav.navbar.bootsnav .navbar-toggle i{color: #ffa136;}
     display: flex;
     align-items: center;
     justify-content: center;
-    min-height: 100vh; /* Ensures full-height display */
+    min-height: 100vh; 
 }
 
 .about:before {
@@ -306,11 +280,11 @@ nav.navbar.bootsnav .navbar-toggle i{color: #ffa136;}
     left: 0;
     width: 100%;
     height: 100%;
-    background: rgba(31, 44, 108, 0.5); /* Overlay filter */
+    background: rgba(31, 44, 108, 0.5); 
     z-index: 1;
 }
 
-/* About section 2 */
+
 .about-2 {
     background: url(../images/subway.jpg) no-repeat center center;
     background-size: cover;
@@ -318,7 +292,7 @@ nav.navbar.bootsnav .navbar-toggle i{color: #ffa136;}
     display: flex;
     align-items: center;
     justify-content: center;
-    min-height: 100vh; /* Ensures full-height display */
+    min-height: 100vh; 
 }
 
 .about-2:before {
@@ -328,11 +302,11 @@ nav.navbar.bootsnav .navbar-toggle i{color: #ffa136;}
     left: 0;
     width: 100%;
     height: 100%;
-    background: rgba(31, 44, 108, 0.5); /* Overlay filter for the second section */
+    background: rgba(31, 44, 108, 0.5); 
     z-index: 1;
 }
 
-/* About section 2 */
+
 .about-3 {
     background: url(../images/\ billboard.png) no-repeat center center;
     background-size: cover;
@@ -340,7 +314,7 @@ nav.navbar.bootsnav .navbar-toggle i{color: #ffa136;}
     display: flex;
     align-items: center;
     justify-content: center;
-    min-height: 100vh; /* Ensures full-height display */
+    min-height: 100vh; 
 }
 
 .about-3:before {
@@ -350,36 +324,35 @@ nav.navbar.bootsnav .navbar-toggle i{color: #ffa136;}
     left: 0;
     width: 100%;
     height: 100%;
-    background: rgba(31, 44, 108, 0.5); /* Overlay filter for the second section */
+    background: rgba(31, 44, 108, 0.5); 
     z-index: 1;
 }
 
 .about-content {
     z-index: 2;
     text-align: center;
-    color: #fff; /* Make text white */
-    max-width: 800px; /* Limit the width for better readability */
+    color: #fff; 
+    max-width: 800px; 
     margin: 0 auto;
 }
 
 .about-content h3 {
     font-size: 28px;
-    color: #fff; /* Header color */
+    color: #fff; 
     text-transform: none;
 }
 
 .about-content p {
     font-size: 18px;
-    color: #fff; /* Paragraph color */
+    color: #fff; 
     line-height: 1.8;
     margin-top: 20px;
 }
 
-/* Mobile responsiveness */
 @media (max-width: 768px) {
     .about {
         padding: 80px 0;
-        background-position: center top; /* Adjust background for smaller screens */
+        background-position: center top; 
     }
 
     .about-content h3 {
@@ -390,7 +363,7 @@ nav.navbar.bootsnav .navbar-toggle i{color: #ffa136;}
         font-size: 16px;
     }
 }
-/*.single-about-txt*/
+
 .single-about-txt h3 {
     font-size:18px;
     color: #3c4258;
@@ -413,9 +386,7 @@ nav.navbar.bootsnav .navbar-toggle i{color: #ffa136;}
     text-transform: capitalize;
 }
 .single-about-add-info p {font-weight:  300;border:  0;padding: 0;margin-top: 3px;}
-/*.single-about-txt*/
 
-/*.single-about-img */
 .single-about-img{position: relative;box-shadow: 0 5px 20px rgba(14,25,80,.30);}
 .single-about-img:before {
     position:  absolute;
@@ -441,7 +412,7 @@ nav.navbar.bootsnav .navbar-toggle i{color: #ffa136;}
     height: 90px;
     background: #ff9900cc;;
 }
-/*.ab-list-icon */
+
 .about-list-icon ul {
     display: flex;
 }
@@ -466,9 +437,6 @@ nav.navbar.bootsnav .navbar-toggle i{color: #ffa136;}
     margin-left: 6px;
 }
 
-/*-------------------------------------
-        11. Contact
---------------------------------------*/
 .contact {
     background: #f9fbfd;
     padding: 14px 0 14px;
@@ -488,7 +456,7 @@ nav.navbar.bootsnav .navbar-toggle i{color: #ffa136;}
 }
 
 .single-contact-btn {
-    z-index: 2;  /* A very high value to ensure it's on top */
+    z-index: 2;  
     position: relative;
 }
 
@@ -508,7 +476,6 @@ nav.navbar.bootsnav .navbar-toggle i{color: #ffa136;}
     resize: none;
 }
 
-/*--contct button--*/
 .contact-form .single-contact-btn {
     display:flex;
     align-items:center;
@@ -552,9 +519,7 @@ nav.navbar.bootsnav .navbar-toggle i{color: #ffa136;}
     height: 100%;
 }
 
-/*--contct button--*/
 
-/* contact-adress */
 .contact-add-head h3 {
     font-size:  24px;
     color:  #3c4258;
@@ -566,9 +531,7 @@ nav.navbar.bootsnav .navbar-toggle i{color: #ffa136;}
     font-weight:  300;
     margin-top:  6px;
 }
-/* contact-adress */
 
-/*.contact-add-info */
 .contact-add-info { margin: 42px 0 52px;}
 .single-contact-add-info h3 {
     color:  #636a82;
@@ -582,9 +545,7 @@ nav.navbar.bootsnav .navbar-toggle i{color: #ffa136;}
 .single-contact-add-info {
     margin-bottom:  26px;
 }
-/*.contact-add-info */
 
-/*hm-foot-icon*/
 .hm-foot-icon {
    
 }
@@ -600,7 +561,7 @@ nav.navbar.bootsnav .navbar-toggle i{color: #ffa136;}
 }
 .hm-foot-icon ul li>a:hover{
     color: #ffa136;
-}/*hm-foot-icon*/
+}
 
 .hm-footer-copyright p{
     color: #888ea5;
@@ -608,9 +569,7 @@ nav.navbar.bootsnav .navbar-toggle i{color: #ffa136;}
     padding: 38px 0;
 }
 .hm-footer-copyright p a {color: #888ea5;}
-/*===============================
-    Scroll Top
-===============================*/
+
 #scroll-Top  .return-to-top {
     position: fixed;
     right: 30px;
@@ -660,14 +619,14 @@ nav.navbar.bootsnav .navbar-toggle i{color: #ffa136;}
 .down-arrows {
     display: inline-flex;
     align-items: center;
-    gap: 27px; /* Space between the arrow and the text */
+    gap: 27px; 
     opacity: 0;
     transition: opacity 0.5s ease, transform 0.5s ease;
 }
 
 .down-arrows.hidden {
     opacity: 0;
-    transform: translateY(10px); /* Fade-out and slide-down for smooth animation */
+    transform: translateY(10px); 
 }
 
 .down-arrows.visible {
@@ -696,22 +655,22 @@ nav.navbar.bootsnav .navbar-toggle i{color: #ffa136;}
     display: flex;
     align-items: center;
     justify-content: center;
-    gap: 8px; /* Adjust this value for the space between the icon and text */
+    gap: 8px; 
 }
 
 .social-link a {
     display: flex;
     align-items: center;
     text-decoration: none;
-    color: inherit; /* Ensure the text color matches your theme */
+    color: inherit; 
 }
 
 .social-link i {
     font-size: 18px;
-    margin-right: 8px; /* Adjust the icon size if needed */
+    margin-right: 8px; 
 }
 
 .social-link p {
     margin: 0;
-    font-size: 14px; /* Adjust the font size if needed */
+    font-size: 14px; 
 }
