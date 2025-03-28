@@ -31,6 +31,146 @@
         <![endif]-->
 
     </head>
+
+	<style>
+		/* .billboards-link {
+			font-weight: 500 !important;
+			position: absolute !important;
+			top: 25px !important;
+			left: -25.5rem !important;
+			color: #e1e1e1 !important;
+			font-size: 15.5px !important;
+			border-radius: 7px !important;
+			padding: 8px 23px !important;
+			display: inline-block !important;
+			text-decoration: none !important;
+			background-color: #9eff916b !important;
+			transition: background-color 0.4s ease-in-out, color 0.4s ease-in-out !important;
+		}
+
+		.billboards-link:hover {
+			background-color: #57ff4175 !important;
+		}	 */
+
+		/* Banner container */
+		.billboard-banner {
+			position: fixed;          /* normal flow, so it sits below the navbar */
+			background-color: #88dd88;  /* orange background */
+			display: inline-block;
+
+			transform: translateX(-300px);    /* off-screen to the left */
+			transition: left 0.3s ease-in-out, transform 0.35s ease-in-out, color 0.4s ease-in-out, background-color 0.35s ease-in-out, opacity 0.5s ease-in-out;
+			z-index: 999;                /* ensure it's above other elements if needed */
+    		top: 110px;
+			left: -15px;
+			border-radius: 0 3.5px 4px 0px;;
+		}
+
+		/* Slide-in class triggered by JavaScript */
+		.billboard-banner.slide-in {
+			transform: translateX(0);
+		}
+
+		/* When scrolled past the welcome hero */
+		.billboard-banner.scrolled {
+			left: -125px;
+		}
+
+		/* Fade-out class for when contacts section is in view */
+		.billboard-banner.fade-out {
+			opacity: 0;
+		}
+
+		/* Triangular arrow on the right */
+		.billboard-banner::after {
+			content: "";
+			position: absolute;
+			top: 0;
+			right: -12.3px;
+
+			/* Create a vertical “arrow” the same height as the banner (50px). 
+			Adjust as needed for a bigger or smaller arrow. */
+			border-top: 23px solid transparent;
+			border-bottom: 24px solid transparent;
+			border-left: 14px solid #88dd88;
+
+			/* Add a transition for the border color */
+  			transition: border-left-color 0.35s ease-in-out;
+		}
+
+		/* The link itself */
+		.billboard-banner a {
+			position: relative;      /* Stacks above the pseudo-element arrow */
+			z-index: 2;             /* Ensure link is above the arrow if needed */
+			display: flex;          /* Allows centering text */
+			align-items: center;
+			justify-content: center;
+			width: 100%;
+			height: 100%;
+			padding: 12px 20px 12px 30px;
+
+			text-decoration: none;
+			color: #ffffff;
+			font-weight: 600;
+			font-size: 16px;
+			transition: transform 0.35s ease-in-out, color 0.4s ease-in-out;
+		}
+
+		/* Hover effect on the banner container */
+		.billboard-banner:hover {
+			/* Move slightly to the right */
+			transform: translateX(10px);
+			left: -15px;
+			background-color: #5f995f;
+		}
+
+		/* Arrow color on hover */
+		.billboard-banner:hover::after {
+			border-left-color: #5f995f;   /* match the darker orange */
+		}
+
+		/* Text turns white on hover */
+		.billboard-banner:hover a {
+			color: #ffffff;
+			transform: translateX(-5px);
+		}
+
+	</style>
+
+	<script>
+		document.addEventListener('DOMContentLoaded', function() {
+			// Give a short delay so the banner slides in after load
+			setTimeout(() => {
+				document.getElementById('billboardBanner').classList.add('slide-in');
+			}, 300);
+
+			const banner = document.getElementById('billboardBanner');
+			const hero = document.getElementById('welcome-hero');
+			const contactSection = document.getElementById('contact');
+
+			function checkScroll() {
+				// Check the welcome hero
+				const heroBottom = hero.getBoundingClientRect().bottom;
+				if (heroBottom <= 0) {
+				banner.classList.add('scrolled');
+				} else {
+				banner.classList.remove('scrolled');
+				}
+				
+				// Check the contacts section
+				const contactTop = contactSection.getBoundingClientRect().top;
+				// When the contact section enters the viewport (you can adjust the threshold)
+				if (contactTop < window.innerHeight) {
+				banner.classList.add('fade-out');
+				} else {
+				banner.classList.remove('fade-out');
+				}
+			}
+			
+			window.addEventListener('scroll', checkScroll);
+			checkScroll();
+		});
+	</script>
 	
 	<body>
 		<!--[if lte IE 9]>
@@ -42,6 +182,7 @@
 			    <nav class="navbar navbar-default bootsnav navbar-fixed dark no-background">
 			        <div class="container">
 			            <div class="navbar-header" style="margin-bottom: 12px;">
+							<!-- <a class="billboards-link" href="billboards.html">BILLBOARDS</a> -->
 			                <a class="navbar-brand" href="#top" style="display: flex;flex-wrap: wrap;align-items: center;flex-direction: row-reverse;"><h1 class="nav-header-text">YMG Advertising </h1><img src="assets/images/Logo.png" alt="logo_image" style="max-width: 58px; margin-inline: 11px;"></a>
 			            </div>
 
@@ -61,6 +202,11 @@
 		    <div class="clearfix"></div>
 
 		</header>
+
+		<!-- New banner below navbar -->
+		<div class="billboard-banner" id="billboardBanner">
+			<a href="billboards.html">BILLBOARDS</a>
+		</div>
 
 		<section id="welcome-hero" class="welcome-hero">
 			<div class="container">
