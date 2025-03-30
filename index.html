@@ -162,8 +162,10 @@
 				// When the contact section enters the viewport (you can adjust the threshold)
 				if (contactTop < window.innerHeight) {
 				banner.classList.add('fade-out');
+				banner.style.pointerEvents = 'none';
 				} else {
 				banner.classList.remove('fade-out');
+				banner.style.pointerEvents = 'auto';
 				}
 			}
 			

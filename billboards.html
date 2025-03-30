@@ -155,6 +155,7 @@
 		opacity: 0;
 		transform: translateY(50px);
 		animation: fadeInUp 0.6s ease-out forwards;
+		margin-top: 45px;
 	}
 
 	/* Close Modal Button (X) */
@@ -370,6 +371,10 @@
 		}
 	}
 
+	#modalIframe {
+		transition: opacity 0.3s ease-in-out;
+	}
+
 	.scroll-container {
 		position: absolute;
 		top: 88px;
@@ -423,17 +428,48 @@
 </style>
 
 <script>
+	document.addEventListener('DOMContentLoaded', function() {
+		var container = document.querySelector('.modal-image-container');
+		var iframe = document.getElementById('modalIframe');
+		
+		// Ensure the iframe has a transition (if not already set in CSS)
+		iframe.style.transition = "opacity 0.3s ease-in-out";
+		
+		container.addEventListener('mouseleave', function(e) {
+			if (e.buttons & 1) { // If the left mouse button is pressed
+			// Fade out the iframe
+			iframe.style.opacity = 0;
+			// After the fade-out completes (300ms), reset the src
+			setTimeout(function() {
+				var currentSrc = iframe.src;
+				iframe.src = ""; // Clear the src to cancel any drag state
+				// Wait a bit and then reload the iframe
+				setTimeout(function() {
+				iframe.src = currentSrc;
+				// When the iframe has finished loading, fade it back in
+				iframe.onload = function() {
+					iframe.style.opacity = 1;
+				};
+				}, 50);
+			}, 300);
+			}
+		});
+	});
+
 	// Open the modal and set its content
-	function openModal(imageSrc, title, description, info, customText) {
+	function openModal(embedParam, title, description, info, customText) {
 		var modal = document.getElementById('imageModal');
 		var modalImage = document.getElementById('modalImage');
 		var modalTitle = document.getElementById('modalTitle');
 		var modalInfo = document.getElementById('modalInfo');
 		var modalCustomText = document.getElementById('modalCustomText');
 		var spinner = document.getElementById('spinner');
+		var modalIframe = document.getElementById('modalIframe');
 
 		// Show spinner before image loads
 		// spinner.style.display = 'block';
+
+		modalIframe.src = "https://www.google.com/maps/embed?pb=" + embedParam;
 
 		// Set content based on passed parameters
 		// modalImage.src = imageSrc;
@@ -455,6 +491,7 @@
 		var modal = document.getElementById('imageModal');
 		modal.style.display = 'none';
 	}
+	
 
 </script>
 
@@ -499,7 +536,7 @@
 						<div class="grid">
 
 							<div class="card" onclick="openModal(
-							      '',
+							      '!4v1740727550325!6m8!1m7!1sc3Uw4vHk_cvzK31tG2ueKw!2m2!1d-36.85408483743241!2d174.7630878492495!3f338.6166639267301!4f10.191409309613618!5f1.570919428878931',
 							      '327 Queens St, Auckland CBD',
 							      'Positioned on the corner of queen street in a four way junction, this site benefits from impressive traffic exposure, with estimated up to 38,500 views daily.',
 							      '6m x 3m',
@@ -516,9 +553,8 @@
 								<p class="card-info"><strong>6m x 3m</strong></p>
 							</div>
 
-
 							<div class="card" onclick="openModal(
-								'',
+								'!4v1743294363953!6m8!1m7!1skCUylQeys-8gg3T17jco6A!2m2!1d-36.84256469093561!2d174.7640265573806!3f153.54005374310805!4f22.43492785720771!5f1.0151600713522715',
 								'196 Quay St, Viaduct',
 								'',
 								'Unknown',
@@ -533,7 +569,7 @@
 							</div>
 
 							<div class="card" onclick="openModal(
-								'./assets/images/Locations/Khyber.jpg',
+								'!4v1743294564693!6m8!1m7!1sve-xrCiaCiQGBtxj921JuQ!2m2!1d-36.86701669520038!2d174.7753945909989!3f84.77373330492749!4f8.669098156790142!5f0.8287199603221671',
 								'394 Khyber Pass Rd, Newmarket',
 								'6m x 3m',
 								'Unknown',
@@ -548,7 +584,7 @@
 							</div>
 
 							<div class="card" onclick="openModal(
-								'./assets/images/Locations/Bond.jpg',
+								'!4v1743294701636!6m8!1m7!1sOnh-MeoicXPbQACU1aIdoA!2m2!1d-36.87137793210078!2d174.7470100689211!3f327.76329961176657!4f-4.743544538427088!5f0.7858396527135588',
 								'77 Bond St, Kingsland',
 								'',
 								'12m x 3m',
@@ -563,7 +599,7 @@
 							</div>
 
 							<div class="card" onclick="openModal(
-								'./assets/images/Locations/Market.jpg',
+								'!4v1743294816572!6m8!1m7!1s0PiY2LW_th1NzQGKh6xITw!2m2!1d-36.88249068367849!2d174.7852296165547!3f19.49233710818214!4f-0.9541368931401593!5f1.4953238223111214',
 								'158A Great South Rd, Epsom',
 								'Positioned on the corner of queen street in a four way junction, this site benefits from impressive traffic exposure, with estimated up to 38,500 views daily.',
 								'6m x 3m',
@@ -578,7 +614,7 @@
 							</div>
 
 							<div class="card" onclick="openModal(
-								'./assets/images/Locations/Bowden.jpg',
+								'!4v1743295106674!6m8!1m7!1sgq1mJ7HK9hmuU_fE1_rLJg!2m2!1d-36.91447510692181!2d174.8495832011039!3f109.30723110675946!4f3.7039231079957347!5f1.541861668320713',
 								'8 Bowden Rd, Mount Wellington',
 								'Positioned on the corner of queen street in a four way junction, this site benefits from impressive traffic exposure, with estimated up to 38,500 views daily.',
 								'12m x 3m',
@@ -628,7 +664,7 @@
 							<!-- Image Container (Top Half) -->
 							<div class="modal-image-container">
 								<!-- <div id="spinner" class="spinner"></div> -->
-								<iframe src="https://www.google.com/maps/embed?pb=!4v1740727550325!6m8!1m7!1sc3Uw4vHk_cvzK31tG2ueKw!2m2!1d-36.85408483743241!2d174.7630878492495!3f338.6166639267301!4f10.191409309613618!5f1.570919428878931" width="800" height="430" style="border:0;" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+								<iframe id="modalIframe" src="" width="800" height="430" style="border:0;" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
 							</div>
 							<!-- Text Area (Bottom Half) -->
 							<div class="modal-text">
