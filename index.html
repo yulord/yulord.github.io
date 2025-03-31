@@ -169,6 +169,16 @@
 				}
 			}
 			
+			if (window.location.hash === "#inquire") {
+				const target = document.querySelector("#contact");
+				if (target) {
+					// Delay a bit to make it feel smoother
+					setTimeout(() => {
+					target.scrollIntoView({ behavior: "smooth" });
+					}, 200);
+				}
+			}
+
 			window.addEventListener('scroll', checkScroll);
 			checkScroll();
 		});
