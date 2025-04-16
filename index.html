@@ -151,22 +151,22 @@
 			function checkScroll() {
 				// Check the welcome hero
 				const heroBottom = hero.getBoundingClientRect().bottom;
-				if (heroBottom <= 0) {
-				banner.classList.add('scrolled');
-				} else {
-				banner.classList.remove('scrolled');
-				}
+				// if (heroBottom <= 0) {
+				// banner.classList.add('scrolled');
+				// } else {
+				// banner.classList.remove('scrolled');
+				// }
 				
 				// Check the contacts section
 				const contactTop = contactSection.getBoundingClientRect().top;
 				// When the contact section enters the viewport (you can adjust the threshold)
-				if (contactTop < window.innerHeight) {
-				banner.classList.add('fade-out');
-				banner.style.pointerEvents = 'none';
-				} else {
-				banner.classList.remove('fade-out');
-				banner.style.pointerEvents = 'auto';
-				}
+				// if (contactTop < window.innerHeight) {
+				// banner.classList.add('fade-out');
+				// banner.style.pointerEvents = 'none';
+				// } else {
+				// banner.classList.remove('fade-out');
+				// banner.style.pointerEvents = 'auto';
+				// }
 			}
 			
 			if (window.location.hash === "#inquire") {
