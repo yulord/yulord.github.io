@@ -317,8 +317,8 @@
 		}
 
 		.modal {
-			top: 83px; 
-			height: calc(100% - 70px); 
+			/* top: 83px; 
+			height: calc(100% - 70px);  */
 			padding-top: 0px;
 
 		}
@@ -406,6 +406,21 @@
 
 	#modalIframe {
 		transition: opacity 0.3s ease-in-out;
+	}
+
+	#enquiryModal .modal-content {
+		border-radius: 10px;
+		max-width: 540px;
+		padding: 30px;
+		/* box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2); */
+	}
+
+	#enquiryModal textarea {
+		max-width: 100%;
+		min-width: 100%;
+
+		max-height: 300px;
+		min-height: 223px;
 	}
 
 	.scroll-container {
@@ -525,6 +540,16 @@
 		modal.style.display = 'none';
 	}
 	
+	function openEnquiryModal(place) {
+		const modal = document.getElementById('enquiryModal');
+		const modalPlace = modal.querySelector('h3');
+		modalPlace.textContent = place || 'place';
+		modal.style.display = 'flex';
+	}
+
+	function closeEnquiryModal() {
+		document.getElementById('enquiryModal').style.display = 'none';
+	}
 
 </script>
 
@@ -568,103 +593,139 @@
 					<div class="scroll-container">
 						<div class="grid">
 
-							<div class="card" onclick="openModal(
-							      '!4v1740727550325!6m8!1m7!1sc3Uw4vHk_cvzK31tG2ueKw!2m2!1d-36.85408483743241!2d174.7630878492495!3f338.6166639267301!4f10.191409309613618!5f1.570919428878931',
-							      '327 Queens St, Auckland CBD',
-							      'Positioned on the corner of queen street in a four way junction, this site benefits from impressive traffic exposure, with estimated up to 38,500 views daily.',
-							      '6m x 3m',
-							      'The billboard at 327 Queen St, measuring 6x3 meters, is located at a high-traffic junction with great visibility. It attracts a diverse range of people, including commuters, professionals, tourists, shoppers, and students. The site receives up to an estimated 38,500 views daily, made up of 17,000 cars, 13,000 bus passengers, and 8,500 pedestrians. The area ensures 24/7 exposure, offering a prime location for brand visibility. We are flexible when it comes to plan and pricing—do contact us for more information.<br><br><strong style=' + 'font-weight:500!important;' + '>Disclaimer</strong>: <i style=' + 'font-size:15.7px!important;color:#7b7b7b!important;font-style:normal!important;' + '>The photo shown is from a previous campaign featuring a 12x3m billboard, which is for reference only. The actual billboard available is 6x3m in size.</i>'
-							    )">
+							<div class="card" >
 
-								<img src="./assets/images/Locations/QueenSt357.png" alt="327_Queen_St.png"> <!-- <------- card image -->
+								<img src="./assets/images/Locations/QueenSt357.png" alt="327_Queen_St.png" onclick="openModal(
+									'!4v1740727550325!6m8!1m7!1sc3Uw4vHk_cvzK31tG2ueKw!2m2!1d-36.85408483743241!2d174.7630878492495!3f338.6166639267301!4f10.191409309613618!5f1.570919428878931',
+									'327 Queens St, Auckland CBD',
+									'Positioned on the corner of queen street in a four way junction, this site benefits from impressive traffic exposure, with estimated up to 38,500 views daily.',
+									'6m x 3m',
+									'The billboard at 327 Queen St, measuring 6x3 meters, is located at a high-traffic junction with great visibility. It attracts a diverse range of people, including commuters, professionals, tourists, shoppers, and students. The site receives up to an estimated 38,500 views daily, made up of 17,000 cars, 13,000 bus passengers, and 8,500 pedestrians. The area ensures 24/7 exposure, offering a prime location for brand visibility. We are flexible when it comes to plan and pricing—do contact us for more information.<br><br><strong style=' + 'font-weight:500!important;' + '>Disclaimer</strong>: <i style=' + 'font-size:15.7px!important;color:#7b7b7b!important;font-style:normal!important;' + '>The photo shown is from a previous campaign featuring a 12x3m billboard, which is for reference only. The actual billboard available is 6x3m in size.</i>'
+								  )">
 								<div class="card-text">
 									<h3 class="card-title">327 Queens St, Auckland CBD</h3>
 									<p class="card-description">Positioned at a four-way junction on the corner of Queen Street,
 										this site boasts impressive high traffic exposure—
 										with up to 1.24 million monthly impressions.</p>
 								</div>
-								<button class="card-button" onclick="event.stopPropagation(); window.location.href='index.html#inquire'">Enquire</button>
-								<button class="card-button-2">More Info</button>
+								<button class="card-button" onclick="event.stopPropagation(); openEnquiryModal('327 Queens St, Auckland CBD');">Enquire</button>
+								<button class="card-button-2" onclick="openModal(
+									'!4v1740727550325!6m8!1m7!1sc3Uw4vHk_cvzK31tG2ueKw!2m2!1d-36.85408483743241!2d174.7630878492495!3f338.6166639267301!4f10.191409309613618!5f1.570919428878931',
+									'327 Queens St, Auckland CBD',
+									'Positioned on the corner of queen street in a four way junction, this site benefits from impressive traffic exposure, with estimated up to 38,500 views daily.',
+									'6m x 3m',
+									'The billboard at 327 Queen St, measuring 6x3 meters, is located at a high-traffic junction with great visibility. It attracts a diverse range of people, including commuters, professionals, tourists, shoppers, and students. The site receives up to an estimated 38,500 views daily, made up of 17,000 cars, 13,000 bus passengers, and 8,500 pedestrians. The area ensures 24/7 exposure, offering a prime location for brand visibility. We are flexible when it comes to plan and pricing—do contact us for more information.<br><br><strong style=' + 'font-weight:500!important;' + '>Disclaimer</strong>: <i style=' + 'font-size:15.7px!important;color:#7b7b7b!important;font-style:normal!important;' + '>The photo shown is from a previous campaign featuring a 12x3m billboard, which is for reference only. The actual billboard available is 6x3m in size.</i>'
+								  )">More Info</button>
 							</div>
 
-							<div class="card" onclick="openModal(
-								'!4v1743294363953!6m8!1m7!1skCUylQeys-8gg3T17jco6A!2m2!1d-36.84256469093561!2d174.7640265573806!3f153.54005374310805!4f22.43492785720771!5f1.0151600713522715',
-								'196 Quay St, Viaduct',
-								'',
-								'Unknown',
-								'This location is one of the bigger signs in the Auckland CBD and likely one of the biggest in the viaduct area. It is attached to a well known hotel and is prime location to have in your advertising strategy, the traffic is very high due to workers and night goers passing by in many mediums of transport.</i>'
-							  )">
-								<img src="./assets/images/Locations/Quay .jpg" alt="Image 2"> <!-- <------- card image -->
+							<div class="card" >
+								<img src="./assets/images/Locations/Quay .jpg" alt="Image 2" onclick="openModal(
+									'!4v1743294363953!6m8!1m7!1skCUylQeys-8gg3T17jco6A!2m2!1d-36.84256469093561!2d174.7640265573806!3f153.54005374310805!4f22.43492785720771!5f1.0151600713522715',
+									'196 Quay St, Viaduct',
+									'',
+									'Unknown',
+									'This location is one of the bigger signs in the Auckland CBD and likely one of the biggest in the viaduct area. It is attached to a well known hotel and is prime location to have in your advertising strategy, the traffic is very high due to workers and night goers passing by in many mediums of transport.</i>'
+								  )"> <!-- <------- card image -->
 								<div class="card-text">
 									<h3 class="card-title">196 Quay St, Viaduct</h3>
 									<p class="card-description">This site is currently in the process of procurement. </p>
 								</div>
-								<button class="card-button" onclick="event.stopPropagation(); window.location.href='index.html#inquire'">Enquire</button>
-								<button class="card-button-2">More Info</button>
+								<button class="card-button" onclick="event.stopPropagation(); openEnquiryModal('196 Quay St, Viaduct');">Enquire</button>
+								<button class="card-button-2" onclick="openModal(
+									'!4v1743294363953!6m8!1m7!1skCUylQeys-8gg3T17jco6A!2m2!1d-36.84256469093561!2d174.7640265573806!3f153.54005374310805!4f22.43492785720771!5f1.0151600713522715',
+									'196 Quay St, Viaduct',
+									'',
+									'Unknown',
+									'This location is one of the bigger signs in the Auckland CBD and likely one of the biggest in the viaduct area. It is attached to a well known hotel and is prime location to have in your advertising strategy, the traffic is very high due to workers and night goers passing by in many mediums of transport.</i>'
+								  )">More Info</button>
 							</div>
 
-							<div class="card" onclick="openModal(
-								'!4v1743294564693!6m8!1m7!1sve-xrCiaCiQGBtxj921JuQ!2m2!1d-36.86701669520038!2d174.7753945909989!3f84.77373330492749!4f8.669098156790142!5f0.8287199603221671',
-								'394 Khyber Pass Rd, Newmarket',
-								'6m x 3m',
-								'Unknown',
-								'This billboard is located on a key street within Newmarket that leads toward the Auckland CBD, this street is used by many commuters and is located adjacent to a University Campus. This is a top tier location to advertise on in the Newmarket district, a decent amount of buses use this route and as there is a gym you will have foot traffic and there is also a gas station which has line of sight on this billboard.</i>'
-							  )">
-								<img src="./assets/images/Locations/Khyber.jpg" alt="Image 3"> <!-- <------- card image -->
+							<div class="card" >
+								<img src="./assets/images/Locations/Khyber.jpg" alt="Image 3" onclick="openModal(
+									'!4v1743294564693!6m8!1m7!1sve-xrCiaCiQGBtxj921JuQ!2m2!1d-36.86701669520038!2d174.7753945909989!3f84.77373330492749!4f8.669098156790142!5f0.8287199603221671',
+									'394 Khyber Pass Rd, Newmarket',
+									'6m x 3m',
+									'Unknown',
+									'This billboard is located on a key street within Newmarket that leads toward the Auckland CBD, this street is used by many commuters and is located adjacent to a University Campus. This is a top tier location to advertise on in the Newmarket district, a decent amount of buses use this route and as there is a gym you will have foot traffic and there is also a gas station which has line of sight on this billboard.</i>'
+								  )"> <!-- <------- card image -->
 								<div class="card-text">
 									<h3 class="card-title">394 Khyber Pass Rd, Newmarket</h3>
 									<p class="card-description">This site is currently in the process of procurement. </p>
 								</div>
-								<button class="card-button" onclick="event.stopPropagation(); window.location.href='index.html#inquire'">Enquire</button>
-								<button class="card-button-2">More Info</button>
+								<button class="card-button" onclick="event.stopPropagation(); openEnquiryModal('394 Khyber Pass Rd, Newmarket');">Enquire</button>
+								<button class="card-button-2" onclick="openModal(
+									'!4v1743294564693!6m8!1m7!1sve-xrCiaCiQGBtxj921JuQ!2m2!1d-36.86701669520038!2d174.7753945909989!3f84.77373330492749!4f8.669098156790142!5f0.8287199603221671',
+									'394 Khyber Pass Rd, Newmarket',
+									'6m x 3m',
+									'Unknown',
+									'This billboard is located on a key street within Newmarket that leads toward the Auckland CBD, this street is used by many commuters and is located adjacent to a University Campus. This is a top tier location to advertise on in the Newmarket district, a decent amount of buses use this route and as there is a gym you will have foot traffic and there is also a gas station which has line of sight on this billboard.</i>'
+								  )">More Info</button>
 							</div>
 
-							<div class="card" onclick="openModal(
-								'!4v1743294701636!6m8!1m7!1sOnh-MeoicXPbQACU1aIdoA!2m2!1d-36.87137793210078!2d174.7470100689211!3f327.76329961176657!4f-4.743544538427088!5f0.7858396527135588',
-								'77 Bond St, Kingsland',
-								'',
-								'12m x 3m',
-								'This site is located adjacent to a four way junction close by to the Auckland CBD, it is situated near retail stores and is a route commuters use to get to town. Additionally it is connected to the road used to access Eden park so whenever events take place at the stadium there will be extra traffic passing by the billboard.</i>'
-							  )">
-								<img src="./assets/images/Locations/Bond.jpg" alt="Image 4"> <!-- <------- card image -->
+							<div class="card" >
+								<img src="./assets/images/Locations/Bond.jpg" alt="Image 4" onclick="openModal(
+									'!4v1743294701636!6m8!1m7!1sOnh-MeoicXPbQACU1aIdoA!2m2!1d-36.87137793210078!2d174.7470100689211!3f327.76329961176657!4f-4.743544538427088!5f0.7858396527135588',
+									'77 Bond St, Kingsland',
+									'',
+									'12m x 3m',
+									'This site is located adjacent to a four way junction close by to the Auckland CBD, it is situated near retail stores and is a route commuters use to get to town. Additionally it is connected to the road used to access Eden park so whenever events take place at the stadium there will be extra traffic passing by the billboard.</i>'
+								  )"> <!-- <------- card image -->
 								<div class="card-text">
 									<h3 class="card-title">77 Bond St, Kingsland</h3>
 									<p class="card-description">This site is currently in the process of procurement. </p>
 								</div>
-								<button class="card-button" onclick="event.stopPropagation(); window.location.href='index.html#inquire'">Enquire</button>
-								<button class="card-button-2">More Info</button>
+								<button class="card-button" onclick="event.stopPropagation(); openEnquiryModal('77 Bond St, Kingsland');">Enquire</button>
+								<button class="card-button-2" onclick="openModal(
+									'!4v1743294701636!6m8!1m7!1sOnh-MeoicXPbQACU1aIdoA!2m2!1d-36.87137793210078!2d174.7470100689211!3f327.76329961176657!4f-4.743544538427088!5f0.7858396527135588',
+									'77 Bond St, Kingsland',
+									'',
+									'12m x 3m',
+									'This site is located adjacent to a four way junction close by to the Auckland CBD, it is situated near retail stores and is a route commuters use to get to town. Additionally it is connected to the road used to access Eden park so whenever events take place at the stadium there will be extra traffic passing by the billboard.</i>'
+								  )">More Info</button>
 							</div>
 
-							<div class="card" onclick="openModal(
-								'!4v1743294816572!6m8!1m7!1s0PiY2LW_th1NzQGKh6xITw!2m2!1d-36.88249068367849!2d174.7852296165547!3f19.49233710818214!4f-0.9541368931401593!5f1.4953238223111214',
-								'158A Great South Rd, Epsom',
-								'',
-								'6m x 3m',
-								'This site is situated off the major road of Great South Rd, along Market Rd. It is above the Remuera train Station and leads traffic into the Remuera suburb. Given Remuera is considered to be affluent, the demographic of impressions attained on this sight may have an inclination to have relatively more disposable income to expend.</i>'
-							  )">
-								<img src="./assets/images/Locations/Market.jpg" alt="Image 5"> <!-- <------- card image -->
+							<div class="card" >
+								<img src="./assets/images/Locations/Market.jpg" alt="Image 5" onclick="openModal(
+									'!4v1743294816572!6m8!1m7!1s0PiY2LW_th1NzQGKh6xITw!2m2!1d-36.88249068367849!2d174.7852296165547!3f19.49233710818214!4f-0.9541368931401593!5f1.4953238223111214',
+									'158A Great South Rd, Epsom',
+									'',
+									'6m x 3m',
+									'This site is situated off the major road of Great South Rd, along Market Rd. It is above the Remuera train Station and leads traffic into the Remuera suburb. Given Remuera is considered to be affluent, the demographic of impressions attained on this sight may have an inclination to have relatively more disposable income to expend.</i>'
+								  )"> <!-- <------- card image -->
 								<div class="card-text">
 									<h3 class="card-title">158A Great South Rd, Epsom</h3>
 									<p class="card-description">This site is currently in the process of procurement. </p>
 								</div>
-								<button class="card-button" onclick="event.stopPropagation(); window.location.href='index.html#inquire'">Enquire</button>
-								<button class="card-button-2">More Info</button>
+								<button class="card-button" onclick="event.stopPropagation(); openEnquiryModal('158A Great South Rd, Epsom');">Enquire</button>
+								<button class="card-button-2" onclick="openModal(
+									'!4v1743294816572!6m8!1m7!1s0PiY2LW_th1NzQGKh6xITw!2m2!1d-36.88249068367849!2d174.7852296165547!3f19.49233710818214!4f-0.9541368931401593!5f1.4953238223111214',
+									'158A Great South Rd, Epsom',
+									'',
+									'6m x 3m',
+									'This site is situated off the major road of Great South Rd, along Market Rd. It is above the Remuera train Station and leads traffic into the Remuera suburb. Given Remuera is considered to be affluent, the demographic of impressions attained on this sight may have an inclination to have relatively more disposable income to expend.</i>'
+								  )">More Info</button>
 							</div>
 
-							<div class="card" onclick="openModal(
-								'!4v1743295106674!6m8!1m7!1sgq1mJ7HK9hmuU_fE1_rLJg!2m2!1d-36.91447510692181!2d174.8495832011039!3f109.30723110675946!4f3.7039231079957347!5f1.541861668320713',
-								'8 Bowden Rd, Mount Wellington',
-								'',
-								'12m x 3m',
-								'This billboard is located along the South Eastern Highway, given it is a highway the traffic is quite abundant especially when commuters head home as this road connects Central Auckland to East Auckland.</i>'
-							  )">
-								<img src="./assets/images/Locations/Bowden.jpg" alt="Image 6"> <!-- <------- card image -->
+							<div class="card" >
+								<img src="./assets/images/Locations/Bowden.jpg" alt="Image 6" onclick="openModal(
+									'!4v1743295106674!6m8!1m7!1sgq1mJ7HK9hmuU_fE1_rLJg!2m2!1d-36.91447510692181!2d174.8495832011039!3f109.30723110675946!4f3.7039231079957347!5f1.541861668320713',
+									'8 Bowden Rd, Mount Wellington',
+									'',
+									'12m x 3m',
+									'This billboard is located along the South Eastern Highway, given it is a highway the traffic is quite abundant especially when commuters head home as this road connects Central Auckland to East Auckland.</i>'
+								  )"> <!-- <------- card image -->
 								<div class="card-text">
 									<h3 class="card-title">8 Bowden Rd, Mount Wellington</h3>
 									<p class="card-description">This site is currently in the process of procurement. </p>
 								</div>
-								<button class="card-button" onclick="event.stopPropagation(); window.location.href='index.html#inquire'">Enquire</button>
-								<button class="card-button-2">More Info</button>
+								<button class="card-button" onclick="event.stopPropagation(); openEnquiryModal('8 Bowden Rd, Mount Wellington');">Enquire</button>
+								<button class="card-button-2" onclick="openModal(
+									'!4v1743295106674!6m8!1m7!1sgq1mJ7HK9hmuU_fE1_rLJg!2m2!1d-36.91447510692181!2d174.8495832011039!3f109.30723110675946!4f3.7039231079957347!5f1.541861668320713',
+									'8 Bowden Rd, Mount Wellington',
+									'',
+									'12m x 3m',
+									'This billboard is located along the South Eastern Highway, given it is a highway the traffic is quite abundant especially when commuters head home as this road connects Central Auckland to East Auckland.</i>'
+								  )">More Info</button>
 							</div>
 
 							<!-- <div class="card" onclick="openModal('./assets/images/Locations/7.jpg')">
@@ -719,6 +780,24 @@
 							</div>
 						</div>
 					</div>
+
+					<!-- Contact Form Modal -->
+					<div class="modal" id="enquiryModal" >
+						<div class="modal-content" style="max-width: 700px; padding: 30px; background-color: #f9fbfd;">
+						<button class="modal-close" onclick="closeEnquiryModal()">×</button>
+						<h2 style="text-align:center; margin-bottom: 10px; font-size: 21px; color: #555555;">Enquiry for</h2>
+						<h3 style="text-align:center; margin-bottom: 40px; font-size: 15px; color: #757575;">place</h3>
+						<form id="contact-form" method="POST" action="https://getform.io/f/aolgxmpb" style="display: flex; flex-direction: column; gap: 15px;">
+							<input type="text" class="form-control" placeholder="Name*" name="name" required style="padding: 12px; padding-top: 22px; padding-bottom: 22px; border-radius: 2px; border: 0px solid #ccc; ">
+							<input type="text" class="form-control" placeholder="Phone*" name="phone" required style="padding: 12px; padding-top: 22px; padding-bottom: 22px; border-radius: 2px; border: 0px solid #ccc;">
+							<input type="email" class="form-control" placeholder="Email*" name="email" required style="padding: 12px; padding-top: 22px; padding-bottom: 22px; border-radius: 2px; border: 0px solid #ccc;">
+							<textarea class="form-control" rows="6" placeholder="Your message..." name="message" required style="padding: 12px; padding-top: 20px; padding-bottom: 22px; border-radius: 2px; border: 0px solid #ccc;"></textarea>
+							<input type="hidden" name="_gotcha" style="display:none !important">
+							<button type="submit" role="button" style="margin-top: 10px; width: 100%; font-size: 16px; background-color: #ffa136; color: white; cursor: pointer; border-radius: 2px; padding: 10px 18px; transition: background-color 0.3sease; font-weight: 600;">Submit</button>
+						</form>
+						</div>
+					</div>
+  
 				</div>
 			</div>
 		</div>
