@@ -135,6 +135,86 @@
 			transform: translateX(-5px);
 		}
 
+		.navbar-brand-container {
+			display: flex;
+			align-items: center;
+			gap: 50px;
+		}
+
+		.navbar-brand-container .navbar-brand {
+			display: flex;
+			align-items: center;
+			gap: 8px;
+		}
+
+		.navbar-brand {
+			display: flex;
+			align-items: center;
+			gap: 8px;
+			margin-bottom: 0; /* prevent misalignment */
+		}
+
+		.navbar-brand img {
+			max-width: 48px;
+			height: auto;
+			margin: 0;
+		}
+
+		.navbar-banner-link {
+			font-weight: 600;
+			background-color: #88dd88;
+			color: white;
+			padding: 8px 18px;
+			border-radius: 4px;
+			text-decoration: none;
+			transition: background-color 0.3s ease;
+			font-size: 14px;
+			white-space: nowrap;
+		}
+
+		.navbar-banner-link:hover {
+			background-color: #5f995f;
+			font-weight: 600;
+			color: white;
+			padding: 8px 18px;
+			border-radius: 4px;
+			text-decoration: none;
+			transition: background-color 0.3s ease;
+			font-size: 14px;
+			white-space: nowrap;
+		}
+
+		/* Responsive adjustments */
+		@media (max-width: 992px) {
+			.navbar-header-text-2{
+				font-size: 15px;
+			}
+
+			.navbar-brand-container{
+				display: flex;
+				align-items: center;
+				gap: 50px;
+				justify-content: space-between;
+			}
+		}
+
+		@media (max-width: 389px) {
+			.navbar-header-text-2{
+				font-size: 10px;
+			}
+
+			.navbar-brand img {
+				max-width: 32px;
+				height: auto;
+				margin: 0;
+			}
+
+			.fix-mobile{
+				padding-bottom: 8px;
+			}
+		}
+
+
 	</style>
 
 	<script>
@@ -192,12 +272,17 @@
 		<header class="top-area" id="top">
 			<div class="header-area">
 			    <nav class="navbar navbar-default bootsnav navbar-fixed dark no-background">
-			        <div class="container">
-			            <div class="navbar-header" style="margin-bottom: 12px;">
-							<!-- <a class="billboards-link" href="billboards.html">BILLBOARDS</a> -->
-			                <a class="navbar-brand" href="#top" style="display: flex;flex-wrap: wrap;align-items: center;flex-direction: row-reverse;"><h1 class="nav-header-text">YMG Advertising </h1><img src="assets/images/Logo.png" alt="logo_image" style="max-width: 58px; margin-inline: 11px;"></a>
-			            </div>
-
+			        <div class="container fix-mobile">
+						<div class="navbar-header" style="margin-top: 8px;">
+							<div class="navbar-brand-container">
+								<a class="navbar-brand" href="#top">
+									<img src="assets/images/Logo.png" alt="logo_image" style="max-width: 48px; display: inline-block;">
+									<h1 class="nav-header-text navbar-header-text-2" style="display: inline-block;">YMG Advertising</h1>
+								</a>
+								<a class="navbar-banner-link" href="billboards.html">BILLBOARDS</a>
+							</div>
+						</div>
+						
 			            <div class="collapse navbar-collapse menu-ui-design" id="navbar-menu">
 			                <ul class="nav navbar-nav navbar-right" data-in="fadeInDown" data-out="fadeOutUp">
 			                <li class=" smooth-menu active"></li>
@@ -216,9 +301,9 @@
 		</header>
 
 		<!-- New banner below navbar -->
-		<div class="billboard-banner" id="billboardBanner">
+		<!-- <div class="billboard-banner" id="billboardBanner">
 			<a href="billboards.html">BILLBOARDS</a>
-		</div>
+		</div> -->
 
 		<section id="welcome-hero" class="welcome-hero">
 			<div class="container">
