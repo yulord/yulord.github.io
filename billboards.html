@@ -502,6 +502,22 @@
 			}, 300);
 			}
 		});
+
+		// === NEW: Handle contact form submission ===
+		const form = document.getElementById('contact-form');
+		const modal = document.getElementById('enquiryModal');
+		const submitButton = form.querySelector('button[type="submit"]');
+
+		form.addEventListener('submit', function () {
+			submitButton.disabled = true;
+			submitButton.textContent = "Sending...";
+
+			setTimeout(() => {
+				modal.style.display = 'none';
+				submitButton.disabled = false;
+				submitButton.textContent = "Submit";
+			}, 1500); // Simulated delay; adjust as needed
+		});
 	});
 
 	// Open the modal and set its content
